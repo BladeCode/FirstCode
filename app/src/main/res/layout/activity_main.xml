@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_start_show"
+        style="@style/BaseButton"
+        android:text="显示启动Activity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_start_implicit"
+        style="@style/BaseButton"
+        android:text="隐式启动Activity(可长按)"
+        app:layout_constraintEnd_toEndOf="@+id/btn_start_show"
+        app:layout_constraintStart_toStartOf="@+id/btn_start_show"
+        app:layout_constraintTop_toBottomOf="@+id/btn_start_show" />
+
+    <Button
+        android:id="@+id/btn_send_data"
+        style="@style/BaseButton"
+        android:text="数据传递(可长按)"
+        app:layout_constraintEnd_toEndOf="@+id/btn_start_implicit"
+        app:layout_constraintStart_toStartOf="@+id/btn_start_implicit"
+        app:layout_constraintTop_toBottomOf="@+id/btn_start_implicit" />
+
+    <Button
+        android:id="@+id/btn_life_cycle"
+        style="@style/BaseButton"
+        android:text="Activity生命周期"
+        app:layout_constraintEnd_toEndOf="@+id/btn_send_data"
+        app:layout_constraintStart_toStartOf="@+id/btn_send_data"
+        app:layout_constraintTop_toBottomOf="@+id/btn_send_data" />
+
+    <Button
+        android:id="@+id/btn_standard"
+        style="@style/BaseButton"
+        android:text="standard"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/btn_singletop"
+        style="@style/BaseButton"
+        android:text="singTop"
+        app:layout_constraintEnd_toEndOf="@+id/btn_standard"
+        app:layout_constraintStart_toStartOf="@+id/btn_standard"
+        app:layout_constraintTop_toBottomOf="@+id/btn_standard" />
+
+    <Button
+        android:id="@+id/btn_singletask"
+        style="@style/BaseButton"
+        android:text="singleTask"
+        app:layout_constraintEnd_toEndOf="@+id/btn_singletop"
+        app:layout_constraintStart_toStartOf="@+id/btn_singletop"
+        app:layout_constraintTop_toBottomOf="@+id/btn_singletop" />
+
+    <Button
+        android:id="@+id/btn_singleinstance"
+        style="@style/BaseButton"
+        android:text="singleInstance"
+        app:layout_constraintEnd_toEndOf="@+id/btn_singletask"
+        app:layout_constraintStart_toStartOf="@+id/btn_singletask"
+        app:layout_constraintTop_toBottomOf="@+id/btn_singletask" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/BaseButton"
+        android:text="Activity启动模式"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_life_cycle" />
+
+</android.support.constraint.ConstraintLayout>
