@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_text"
+            android:checked="true"
+            android:icon="@drawable/ic_text"
+            android:title="Text" />
+        <item
+            android:id="@+id/nav_button"
+            android:icon="@drawable/ic_button"
+            android:title="Button" />
+        <item
+            android:id="@+id/nav_widgets"
+            android:icon="@drawable/ic_widgets"
+            android:title="Widgets" />
+        <item
+            android:id="@+id/nav_layout"
+            android:icon="@drawable/ic_layout"
+            android:title="Layout" />
+        <item
+            android:id="@+id/nav_containers"
+            android:icon="@drawable/ic_containers"
+            android:title="Containers" />
+        <item
+            android:id="@+id/nav_google"
+            android:icon="@drawable/ic_google"
+            android:title="Google" />
+        <item
+            android:id="@+id/nav_legacy"
+            android:icon="@drawable/ic_legacy"
+            android:title="Legacy" />
+        <!--<item
+            android:id="@+id/nav_custom"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="CustomView" />-->
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>
