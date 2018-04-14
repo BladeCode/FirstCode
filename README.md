@@ -16,6 +16,6 @@ Log(android.util.Log)是Android中所特有的日志工具类
 * W — 警告
 * E — 错误
 * A — 断言
-
-日志消息的格式为：
+```
+日志消息的格式为：date time PID-TID/package priority/tag: message
 ```
