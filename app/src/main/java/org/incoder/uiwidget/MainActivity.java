@@ -1,5 +1,6 @@
 package org.incoder.uiwidget;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -53,6 +54,7 @@ import org.incoder.uiwidget.legacy.GridViewFragment;
 import org.incoder.uiwidget.legacy.ListViewFragment;
 import org.incoder.uiwidget.legacy.RelativeLayoutFragment;
 import org.incoder.uiwidget.legacy.TabHostFragment;
+import org.incoder.uiwidget.statusbar.StatusBarActivity;
 import org.incoder.uiwidget.text.AutoCompleteTextViewFragment;
 import org.incoder.uiwidget.text.CheckedTextViewFragment;
 import org.incoder.uiwidget.text.DateFragment;
@@ -104,6 +106,7 @@ public class MainActivity extends AppCompatActivity
     TabLayout tabLayout;
     @BindView(R.id.view_pager)
     ViewPager viewPager;
+
     private List<Fragment> fragments;
     private String[] mTexts = {"TextView", "Plain Text", "Password", "E-mail", "Phone", "Postal Address",
             "Multiline Text", "Time", "Date", "Number", "AutoCompleteTextView", "MultiAutoCompleteTextView", "CheckedTextView", "TextInputLayout"};
@@ -271,7 +274,6 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -299,7 +301,8 @@ public class MainActivity extends AppCompatActivity
             /*// 自定义控件
             case R.id.nav_custom:
                 break;*/
-            case R.id.nav_share:
+            case R.id.nav_bar:
+                startActivity(new Intent(this, StatusBarActivity.class));
                 break;
             case R.id.nav_send:
                 break;
