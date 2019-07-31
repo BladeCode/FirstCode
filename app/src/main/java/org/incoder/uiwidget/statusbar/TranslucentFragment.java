@@ -20,11 +20,16 @@ package org.incoder.uiwidget.statusbar;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import org.incoder.uiwidget.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * 透明色
@@ -34,6 +39,9 @@ import org.incoder.uiwidget.R;
  */
 public class TranslucentFragment extends Fragment {
 
+    @BindView(R.id.toolbar)
+    Toolbar mToolbar;
+    Unbinder unbinder;
 
     public TranslucentFragment() {
         // Required empty public constructor
@@ -44,7 +52,15 @@ public class TranslucentFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_translucent, container, false);
+        View view = inflater.inflate(R.layout.fragment_translucent, container, false);
+        unbinder = ButterKnife.bind(this, view);
+        return view;
     }
 
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+    }
 }

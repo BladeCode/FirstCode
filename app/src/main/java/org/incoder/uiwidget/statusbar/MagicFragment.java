@@ -27,15 +27,15 @@ import android.view.ViewGroup;
 import org.incoder.uiwidget.R;
 
 /**
- * StatusBarActivity
+ * 魔法状态栏
  *
  * @author Jerry xu
  * @date 7/29/2019 1:00 AM.
  */
-public class HomeFragment extends Fragment {
+public class MagicFragment extends Fragment {
 
 
-    public HomeFragment() {
+    public MagicFragment() {
         // Required empty public constructor
     }
 
@@ -44,7 +44,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_magic, container, false);
     }
 
 }

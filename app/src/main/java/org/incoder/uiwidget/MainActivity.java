@@ -304,7 +304,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_bar:
                 startActivity(new Intent(this, StatusBarActivity.class));
                 break;
-            case R.id.nav_send:
+            case R.id.nav_sheet:
                 break;
             default:
                 break;

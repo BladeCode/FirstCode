@@ -8,47 +8,51 @@
             android:id="@+id/nav_text"
             android:checked="true"
             android:icon="@drawable/ic_text"
-            android:title="Text" />
+            android:title="@string/text" />
         <item
             android:id="@+id/nav_button"
             android:icon="@drawable/ic_button"
-            android:title="Button" />
+            android:title="@string/button" />
         <item
             android:id="@+id/nav_widgets"
             android:icon="@drawable/ic_widgets"
-            android:title="Widgets" />
+            android:title="@string/widgets" />
         <item
             android:id="@+id/nav_layout"
             android:icon="@drawable/ic_layout"
-            android:title="Layout" />
+            android:title="@string/layout" />
         <item
             android:id="@+id/nav_containers"
             android:icon="@drawable/ic_containers"
-            android:title="Containers" />
+            android:title="@string/containers" />
         <item
             android:id="@+id/nav_google"
             android:icon="@drawable/ic_google"
-            android:title="Google" />
+            android:title="@string/google" />
         <item
             android:id="@+id/nav_legacy"
             android:icon="@drawable/ic_legacy"
-            android:title="Legacy" />
+            android:title="@string/legacy" />
         <!--<item
             android:id="@+id/nav_custom"
             android:icon="@drawable/ic_menu_manage"
             android:title="CustomView" />-->
     </group>
 
-    <item android:title="Other">
+    <item android:title="@string/components">
         <menu>
+            <item
+                android:id="@+id/nav_chips"
+                android:icon="@drawable/ic_share"
+                android:title="@string/chips" />
             <item
                 android:id="@+id/nav_bar"
                 android:icon="@drawable/ic_share"
-                android:title="StatusBar" />
+                android:title="@string/status_bar" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_sheet"
                 android:icon="@drawable/ic_send"
-                android:title="Send" />
+                android:title="@string/sheet" />
         </menu>
     </item>
 

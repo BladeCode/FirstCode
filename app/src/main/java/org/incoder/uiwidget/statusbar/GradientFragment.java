@@ -17,13 +17,23 @@
 package org.incoder.uiwidget.statusbar;
 
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioButton;
 
 import org.incoder.uiwidget.R;
+
+import butterknife.BindDrawable;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import butterknife.Unbinder;
 
 /**
  * 渐变色
@@ -34,16 +44,47 @@ import org.incoder.uiwidget.R;
 public class GradientFragment extends Fragment {
 
 
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.rb_shape)
+    RadioButton rbShape;
+    @BindView(R.id.rb_img)
+    RadioButton rbImg;
+
+    @BindDrawable(R.drawable.gradient_status_bar)
+    Drawable shapeGradient;
+    @BindDrawable(R.drawable.gradient_img)
+    Drawable imgGradient;
+
+    Unbinder unbinder;
+
+    @OnClick(R.id.rb_shape)
+    void shapeGradient() {
+        toolbar.setBackground(shapeGradient);
+    }
+
+    @OnClick(R.id.rb_img)
+    void imgGradient() {
+        toolbar.setBackground(imgGradient);
+    }
+
     public GradientFragment() {
         // Required empty public constructor
     }
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gradient, container, false);
+        View view = inflater.inflate(R.layout.fragment_gradient, container, false);
+        unbinder = ButterKnife.bind(this, view);
+        return view;
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+    }
 }

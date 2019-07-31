@@ -53,7 +53,7 @@ public class StatusBarActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
+                case R.id.navigation_image:
                     vpContent.setCurrentItem(0);
                     return true;
                 case R.id.navigation_translucent:
@@ -61,6 +61,9 @@ public class StatusBarActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_gradient:
                     vpContent.setCurrentItem(2);
+                    return true;
+                case R.id.navigation_magic:
+                    vpContent.setCurrentItem(3);
                     return true;
                 default:
                     break;
@@ -75,9 +78,10 @@ public class StatusBarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_status_bar);
         ButterKnife.bind(this);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        mFragments.add(new HomeFragment());
+        mFragments.add(new ImageFragment());
         mFragments.add(new TranslucentFragment());
         mFragments.add(new GradientFragment());
+        mFragments.add(new MagicFragment());
         vpContent.setOffscreenPageLimit(mFragments.size());
         vpContent.setAdapter(new BasePagerAdapter(getSupportFragmentManager(), mFragments));
         vpContent.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -89,11 +93,13 @@ public class StatusBarActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 if (position == 0) {
-                    navView.setSelectedItemId(R.id.navigation_home);
+                    navView.setSelectedItemId(R.id.navigation_image);
                 } else if (position == 1) {
                     navView.setSelectedItemId(R.id.navigation_translucent);
-                } else {
+                } else if (position == 2) {
                     navView.setSelectedItemId(R.id.navigation_gradient);
+                } else if (position == 3) {
+                    navView.setSelectedItemId(R.id.navigation_magic);
                 }
             }
 
