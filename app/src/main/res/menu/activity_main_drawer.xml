@@ -42,6 +42,10 @@
     <item android:title="@string/components">
         <menu>
             <item
+                android:id="@+id/nav_notification"
+                android:icon="@drawable/ic_share"
+                android:title="@string/notification" />
+            <item
                 android:id="@+id/nav_chips"
                 android:icon="@drawable/ic_share"
                 android:title="@string/chips" />

@@ -54,6 +54,7 @@ import org.incoder.uiwidget.legacy.GridViewFragment;
 import org.incoder.uiwidget.legacy.ListViewFragment;
 import org.incoder.uiwidget.legacy.RelativeLayoutFragment;
 import org.incoder.uiwidget.legacy.TabHostFragment;
+import org.incoder.uiwidget.sheet.SheetActivity;
 import org.incoder.uiwidget.statusbar.StatusBarActivity;
 import org.incoder.uiwidget.text.AutoCompleteTextViewFragment;
 import org.incoder.uiwidget.text.CheckedTextViewFragment;
@@ -305,6 +306,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(this, StatusBarActivity.class));
                 break;
             case R.id.nav_sheet:
+                startActivity(new Intent(this, SheetActivity.class));
                 break;
             default:
                 break;

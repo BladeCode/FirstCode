@@ -29,8 +29,9 @@
     <string name="legacy">Legacy</string>
     <string name="components">Components</string>
     <string name="status_bar">StatusBar&#160;&#038;&#160;NavigationBar</string>
-    <string name="sheet">Sheet</string>
+    <string name="sheet">Bottom&#160;Sheets</string>
     <string name="chips">Chips</string>
+    <string name="notification">Notification</string>
 
     <string name="large_text">
         "Material is the metaphor.\n\n"

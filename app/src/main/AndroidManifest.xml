@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".sheet.SheetActivity"></activity>
         <activity
             android:name=".statusbar.StatusBarActivity"
             android:label="@string/title_activity_status_bar"
