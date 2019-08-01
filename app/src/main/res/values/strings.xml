@@ -19,6 +19,7 @@
     <string name="title_magic">Magic</string>
 
     <string name="action_search">Search</string>
+    <string name="action_info">Info</string>
     <string name="text">Text</string>
     <string name="button">Button</string>
     <string name="widgets">Widgets</string>
@@ -120,4 +121,8 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="shape_background">Shape Background</string>
+    <string name="image_background">Image Background</string>
+    <string name="light_mode">Light mode</string>
+    <string name="black_mode">Black mode</string>
 </resources>

@@ -20,11 +20,21 @@ package org.incoder.uiwidget.statusbar;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 import org.incoder.uiwidget.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * 魔法状态栏
@@ -35,6 +45,15 @@ import org.incoder.uiwidget.R;
 public class MagicFragment extends Fragment {
 
 
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.tv_transparency)
+    TextView tvTransparency;
+    @BindView(R.id.sb_transparency)
+    SeekBar sbTransparency;
+
+    Unbinder unbinder;
+
     public MagicFragment() {
         // Required empty public constructor
     }
@@ -44,7 +63,28 @@ public class MagicFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_magic, container, false);
+        View view = inflater.inflate(R.layout.fragment_magic, container, false);
+        unbinder = ButterKnife.bind(this, view);
+        setHasOptionsMenu(true);
+        return view;
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+    }
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.info, menu);
+        super.onCreateOptionsMenu(menu,inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+
+    }
 }

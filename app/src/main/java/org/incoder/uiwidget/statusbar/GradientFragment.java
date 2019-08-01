@@ -29,6 +29,8 @@ import android.widget.RadioButton;
 
 import org.incoder.uiwidget.R;
 
+import java.util.Objects;
+
 import butterknife.BindDrawable;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,6 +52,10 @@ public class GradientFragment extends Fragment {
     RadioButton rbShape;
     @BindView(R.id.rb_img)
     RadioButton rbImg;
+    @BindView(R.id.rb_light)
+    RadioButton rbLight;
+    @BindView(R.id.rb_black)
+    RadioButton rbBlack;
 
     @BindDrawable(R.drawable.gradient_status_bar)
     Drawable shapeGradient;
@@ -58,14 +64,22 @@ public class GradientFragment extends Fragment {
 
     Unbinder unbinder;
 
-    @OnClick(R.id.rb_shape)
-    void shapeGradient() {
-        toolbar.setBackground(shapeGradient);
+    @OnClick({R.id.rb_shape, R.id.rb_img})
+    void shapeGradient(View view) {
+        if (view.getId() == R.id.rb_shape) {
+            toolbar.setBackground(shapeGradient);
+        } else {
+            toolbar.setBackground(imgGradient);
+        }
     }
 
-    @OnClick(R.id.rb_img)
-    void imgGradient() {
-        toolbar.setBackground(imgGradient);
+    @OnClick({R.id.rb_light, R.id.rb_black})
+    void selectMode(View view) {
+        if (view.getId() == R.id.rb_light) {
+            StatusUtils.setStatusBarLightMode(Objects.requireNonNull(getActivity()).getWindow(), false);
+        } else {
+            StatusUtils.setStatusBarLightMode(Objects.requireNonNull(getActivity()).getWindow(), true);
+        }
     }
 
     public GradientFragment() {
