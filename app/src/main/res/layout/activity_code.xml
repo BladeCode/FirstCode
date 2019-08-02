@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".code.CodeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <org.incoder.uiwidget.code.CodeEditText
+            android:id="@+id/edit_solid"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:inputType="number"
+            app:blockSpacing="6dp"
+            app:corner="10dp"
+            app:cursorColor="@color/colorAccent"
+            app:cursorDuration="1000"
+            app:cursorWidth="2dp"
+            app:maxLength="6"
+            app:separateType="@integer/type_solid" />
+
+        <org.incoder.uiwidget.code.CodeEditText
+            android:id="@+id/edit_underline"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:inputType="number"
+            app:blockSpacing="8dp"
+            app:borderColor="@android:color/darker_gray"
+            app:separateType="@integer/type_underline"
+            app:textColor="@color/colorAccent" />
+
+        <org.incoder.uiwidget.code.CodeEditText
+            android:id="@+id/edit_hollow"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:inputType="number"
+            app:borderColor="@android:color/darker_gray"
+            app:corner="8dp"
+            app:cursorColor="@android:color/holo_orange_light"
+            app:cursorWidth="2dp"
+            app:maxLength="4"
+            app:separateType="@integer/type_hollow"
+            app:textColor="@color/colorAccent" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="是否密码类型" />
+
+            <RadioButton
+                android:id="@+id/rb_password_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="是" />
+
+            <RadioButton
+                android:id="@+id/rb_password_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="否" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="是否显示光标" />
+
+            <RadioButton
+                android:id="@+id/rb_cursor_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="是" />
+
+            <RadioButton
+                android:id="@+id/rb_cursor_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="否" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="是否高亮位置" />
+
+            <RadioButton
+                android:id="@+id/rb_highlight_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="是" />
+
+            <RadioButton
+                android:id="@+id/rb_highlight_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="否" />
+        </RadioGroup>
+    </LinearLayout>
+</ScrollView>

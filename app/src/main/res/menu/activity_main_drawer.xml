@@ -50,6 +50,10 @@
                 android:icon="@drawable/ic_share"
                 android:title="@string/chips" />
             <item
+                android:id="@+id/nav_code"
+                android:icon="@drawable/ic_share"
+                android:title="@string/code" />
+            <item
                 android:id="@+id/nav_bar"
                 android:icon="@drawable/ic_share"
                 android:title="@string/status_bar" />

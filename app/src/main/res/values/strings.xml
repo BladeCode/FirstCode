@@ -31,6 +31,7 @@
     <string name="status_bar">StatusBar&#160;&#038;&#160;NavigationBar</string>
     <string name="sheet">Bottom&#160;Sheets</string>
     <string name="chips">Chips</string>
+    <string name="code">CodeEdit</string>
     <string name="notification">Notification</string>
 
     <string name="large_text">

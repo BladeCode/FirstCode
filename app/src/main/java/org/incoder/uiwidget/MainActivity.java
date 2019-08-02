@@ -24,6 +24,7 @@ import org.incoder.uiwidget.button.RadioButtonFragment;
 import org.incoder.uiwidget.button.RadioGroupFragment;
 import org.incoder.uiwidget.button.SwitchFragment;
 import org.incoder.uiwidget.button.ToggleButtonFragment;
+import org.incoder.uiwidget.code.CodeActivity;
 import org.incoder.uiwidget.containers.AppBarLayoutFragment;
 import org.incoder.uiwidget.containers.BottomNavigationFragment;
 import org.incoder.uiwidget.containers.CardViewFragment;
@@ -302,6 +303,9 @@ public class MainActivity extends AppCompatActivity
             /*// 自定义控件
             case R.id.nav_custom:
                 break;*/
+            case R.id.nav_code:
+                startActivity(new Intent(this, CodeActivity.class));
+                break;
             case R.id.nav_bar:
                 startActivity(new Intent(this, StatusBarActivity.class));
                 break;

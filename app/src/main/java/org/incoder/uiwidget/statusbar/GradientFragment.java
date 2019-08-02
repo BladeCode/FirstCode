@@ -21,10 +21,15 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 
 import org.incoder.uiwidget.R;
@@ -45,9 +50,12 @@ import butterknife.Unbinder;
  */
 public class GradientFragment extends Fragment {
 
-
+    @BindView(R.id.ll_toolbar)
+    LinearLayout mLinearToolbar;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+    @BindView(R.id.status_bar_fix)
+    View mBar;
     @BindView(R.id.rb_shape)
     RadioButton rbShape;
     @BindView(R.id.rb_img)
@@ -67,9 +75,9 @@ public class GradientFragment extends Fragment {
     @OnClick({R.id.rb_shape, R.id.rb_img})
     void shapeGradient(View view) {
         if (view.getId() == R.id.rb_shape) {
-            toolbar.setBackground(shapeGradient);
+            mLinearToolbar.setBackground(shapeGradient);
         } else {
-            toolbar.setBackground(imgGradient);
+            mLinearToolbar.setBackground(imgGradient);
         }
     }
 
@@ -93,6 +101,10 @@ public class GradientFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_gradient, container, false);
         unbinder = ButterKnife.bind(this, view);
+        // 填充状态栏
+        mBar.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, StatusUtils.getStatusBarHeight(Objects.requireNonNull(getActivity()))));
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+        setHasOptionsMenu(true);
         return view;
     }
 
@@ -100,5 +112,16 @@ public class GradientFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.info, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
     }
 }
